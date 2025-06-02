@@ -1,0 +1,521 @@
+<h1 id="institut-universitaire-des-sciences---ius">Institut
+Universitaire des Sciences - IUS</h1>
+<h2 id="faculté-des-sciences-et-technologie---fst">Faculté des Sciences
+et Technologie - FST</h2>
+<h3 id="rapport-du-td-3-math---info">Rapport du td 3 Math - Info</h3>
+<h3 id="niveau-l3-fst">Niveau L3 FST</h3>
+<h3 id="soumis-au-chargé-de-cours-ismael-saint-amour">Soumis Au chargé
+de cours Ismael SAINT AMOUR</h3>
+<h3 id="préparé-par-robaldo-badio">Préparé par Robaldo BADIO</h3>
+<h4 id="date-le-7-juin-2025">Date Le 7 juin 2025</h4>
+<h1 id="tp">TP</h1>
+<h2 id="exercice-1-matrices-de-base">Exercice 1 — Matrices de base</h2>
+<p>Objectif : Créer deux matrices 4x4, puis : Afficher leur somme
+Calculer leur produit élément par élément Calculer leur produit
+matriciel Afficher les 3 résultats et Visualisation Graphique des
+Matrices</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Objectif : Créer deux matrices 4x4</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la première matrice 4x4</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez modifier les valeurs ici</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>matrice_A <span class="op">=</span> np.array([</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>],</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>]</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la deuxième matrice 4x4</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Vous pouvez modifier les valeurs ici</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>matrice_B <span class="op">=</span> np.array([</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">14</span>, <span class="dv">13</span>],</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">12</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">9</span>],</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>],</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- Matrices Originales ---&quot;</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Matrice A :&quot;</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrice_A)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Matrice B :&quot;</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrice_B)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Opérations Matricielles ---</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Afficher leur somme (élément par élément)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>somme_matrices <span class="op">=</span> matrice_A <span class="op">+</span> matrice_B</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Somme des Matrices (A + B) ---&quot;</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(somme_matrices)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Calculer leur produit élément par élément (multiplication de Hadamard)</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>produit_element_par_element <span class="op">=</span> matrice_A <span class="op">*</span> matrice_B</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Produit Élément par Élément (A * B) ---&quot;</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(produit_element_par_element)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Calculer leur produit matriciel (produit de matrices standard)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>produit_matriciel <span class="op">=</span> np.dot(matrice_A, matrice_B)</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativement, depuis Python 3.5, on peut utiliser l&#39;opérateur @ :</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># produit_matriciel = matrice_A @ matrice_B</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Produit Matriciel (A . B) ---&quot;</span>)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(produit_matriciel)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Visualisation Graphique des Matrices ---</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonction pour visualiser une matrice</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> visualiser_matrice(matrice, titre):</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>)) <span class="co"># Taille de la figure</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    plt.imshow(matrice, cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, origin<span class="op">=</span><span class="st">&#39;upper&#39;</span>) <span class="co"># Affiche la matrice sous forme d&#39;image</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    plt.colorbar(label<span class="op">=</span><span class="st">&#39;Valeur&#39;</span>) <span class="co"># Ajoute une barre de couleur</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    plt.title(titre) <span class="co"># Titre du graphique</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    plt.xticks(np.arange(matrice.shape[<span class="dv">1</span>])) <span class="co"># Affiche les indices de colonne</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    plt.yticks(np.arange(matrice.shape[<span class="dv">0</span>])) <span class="co"># Affiche les indices de ligne</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Annoter chaque cellule avec sa valeur</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j, i), val <span class="kw">in</span> np.ndenumerate(matrice):</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        plt.text(i, j, <span class="ss">f&#39;</span><span class="sc">{</span>val<span class="sc">:.0f}</span><span class="ss">&#39;</span>, ha<span class="op">=</span><span class="st">&#39;center&#39;</span>, va<span class="op">=</span><span class="st">&#39;center&#39;</span>, color<span class="op">=</span><span class="st">&#39;white&#39;</span> <span class="cf">if</span> val <span class="op">&lt;</span> np.mean(matrice) <span class="cf">else</span> <span class="st">&#39;black&#39;</span>)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisation des matrices originales et des résultats</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>visualiser_matrice(matrice_A, <span class="st">&quot;Matrice A&quot;</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>visualiser_matrice(matrice_B, <span class="st">&quot;Matrice B&quot;</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>visualiser_matrice(somme_matrices, <span class="st">&quot;Somme des Matrices (A + B)&quot;</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>visualiser_matrice(produit_element_par_element, <span class="st">&quot;Produit Élément par Élément (A * B)&quot;</span>)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>visualiser_matrice(produit_matriciel, <span class="st">&quot;Produit Matriciel (A . B)&quot;</span>)</span></code></pre></div>
+<pre><code>--- Matrices Originales ---
+Matrice A :
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]
+ [13 14 15 16]]
+
+Matrice B :
+[[16 15 14 13]
+ [12 11 10  9]
+ [ 8  7  6  5]
+ [ 4  3  2  1]]
+
+--- Somme des Matrices (A + B) ---
+[[17 17 17 17]
+ [17 17 17 17]
+ [17 17 17 17]
+ [17 17 17 17]]
+
+--- Produit Élément par Élément (A * B) ---
+[[16 30 42 52]
+ [60 66 70 72]
+ [72 70 66 60]
+ [52 42 30 16]]
+
+--- Produit Matriciel (A . B) ---
+[[ 80  70  60  50]
+ [240 214 188 162]
+ [400 358 316 274]
+ [560 502 444 386]]</code></pre>
+<figure>
+<img src="output_4_1.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<figure>
+<img src="output_4_2.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<figure>
+<img src="output_4_3.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<figure>
+<img src="output_4_4.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<figure>
+<img src="output_4_5.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<h2 id="exercice-2-probabilité-de-réussite">Exercice 2 — Probabilité de
+réussite</h2>
+<p>Objectif : Calculer la probabilité qu’un étudiant ait réussi un test
+dans une classe de 60 étudiants. Données : 35 filles, dont 18 ont
+réussi. 25 garçons, dont 12 ont réussi. Instructions : Pente (coef) :
+0.002624242424242423 Intercept : -0.23636363636363455 Calculer la
+probabilité qu’un étudiant pris au hasard ait réussi. Afficher le
+résultat sous forme de graphe circulaire (camembert) en utilisant
+matplotlib. Interprétez les résultats.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Données fournies</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>total_etudiants <span class="op">=</span> <span class="dv">60</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>filles <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>filles_reussi <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>garcons <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>garcons_reussi <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer le nombre total d&#39;étudiants ayant réussi</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>total_reussi <span class="op">=</span> filles_reussi <span class="op">+</span> garcons_reussi</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer le nombre total d&#39;étudiants ayant échoué</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>total_echoue <span class="op">=</span> total_etudiants <span class="op">-</span> total_reussi</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer la probabilité qu&#39;un étudiant pris au hasard ait réussi</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>probabilite_reussite <span class="op">=</span> total_reussi <span class="op">/</span> total_etudiants</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nombre total d&#39;étudiants : </span><span class="sc">{</span>total_etudiants<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nombre de filles : </span><span class="sc">{</span>filles<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nombre de garçons : </span><span class="sc">{</span>garcons<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Filles ayant réussi : </span><span class="sc">{</span>filles_reussi<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Garçons ayant réussi : </span><span class="sc">{</span>garcons_reussi<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Total d&#39;étudiants ayant réussi : </span><span class="sc">{</span>total_reussi<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Total d&#39;étudiants ayant échoué : </span><span class="sc">{</span>total_echoue<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">La probabilité qu&#39;un étudiant pris au hasard ait réussi est : </span><span class="sc">{</span>probabilite_reussite<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Affichage du résultat sous forme de graphe circulaire (camembert) ---</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Données pour le graphique</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Réussi&#39;</span>, <span class="st">&#39;Échoué&#39;</span>]</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [total_reussi, total_echoue]</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&#39;lightgreen&#39;</span>, <span class="st">&#39;lightcoral&#39;</span>]</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> (<span class="fl">0.1</span>, <span class="dv">0</span>)  <span class="co"># &quot;Explode&quot; la part &#39;Réussi&#39; pour la mettre en évidence</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>)) <span class="co"># Taille du graphique</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>plt.pie(sizes, explode<span class="op">=</span>explode, labels<span class="op">=</span>labels, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        shadow<span class="op">=</span><span class="va">True</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Probabilité de Réussite au Test&#39;</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">&#39;equal&#39;</span>)  <span class="co"># Assure que le camembert est dessiné comme un cercle.</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Interprétation des résultats ---</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Interprétation des Résultats ---&quot;</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Sur un total de </span><span class="sc">{</span>total_etudiants<span class="sc">}</span><span class="ss"> étudiants, </span><span class="sc">{</span>total_reussi<span class="sc">}</span><span class="ss"> ont réussi et </span><span class="sc">{</span>total_echoue<span class="sc">}</span><span class="ss"> ont échoué.&quot;</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;La probabilité de réussite globale est de </span><span class="sc">{</span>probabilite_reussite<span class="sc">:.2%}</span><span class="ss">,&quot;</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;ce qui signifie que </span><span class="sc">{</span>total_reussi<span class="sc">}</span><span class="ss"> étudiants sur </span><span class="sc">{</span>total_etudiants<span class="sc">}</span><span class="ss"> ont réussi le test.&quot;</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Le graphique circulaire montre visuellement la proportion des étudiants ayant réussi par rapport à ceux ayant échoué.&quot;</span>)</span></code></pre></div>
+<pre><code>Nombre total d&#39;étudiants : 60
+Nombre de filles : 35
+Nombre de garçons : 25
+Filles ayant réussi : 18
+Garçons ayant réussi : 12
+Total d&#39;étudiants ayant réussi : 30
+Total d&#39;étudiants ayant échoué : 30
+
+La probabilité qu&#39;un étudiant pris au hasard ait réussi est : 0.5000</code></pre>
+<figure>
+<img src="output_7_1.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<pre><code>--- Interprétation des Résultats ---
+Sur un total de 60 étudiants, 30 ont réussi et 30 ont échoué.
+La probabilité de réussite globale est de 50.00%,
+ce qui signifie que 30 étudiants sur 60 ont réussi le test.
+Le graphique circulaire montre visuellement la proportion des étudiants ayant réussi par rapport à ceux ayant échoué.</code></pre>
+<h3
+id="calculons-la-probabilité-quun-étudiant-pris-au-hasard-ait-réussi.">Calculons
+la probabilité qu’un étudiant pris au hasard ait réussi.</h3>
+<p>Nombre total d étudiants : 60 Nombre de filles ayant réussi: 18
+Nombre garcons ayant réussi: 12 Nombre total étudiants ayant réussi: 18
++ 12 = 30 P(réussite) = Nombre étudiant ayant réussi / Nombre Total
+étudiants = 30 / 60 = 0,5 Donc, La probabilité de réussite est 0,5 ou
+50%</p>
+<p>Le camembert montre que la moitié des étudiants de la classe ont
+réussi le test et la moitié ont échoué. La probabilité qu un éetudiant
+pris au hasard dans cette classe ait réussi le test est donc 0.5 ou
+50%.</p>
+<h3 id="exercice-3-probabilité-conditionnelle">Exercice 3 — Probabilité
+conditionnelle</h3>
+<p>Objectif : Calculer la probabilité qu’un étudiant soit une fille
+sachant qu’il a réussi. Données : 35 filles, dont 18 ont réussi. 25
+garçons, dont 12 ont réussi. Instructions : Calculer la probabilité
+qu’un étudiant qui a réussi soit une fille. Afficher les résultats sous
+forme de graphe circulaire. Interprétez la probabilité obtenue.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Données fournies</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>total_filles <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>filles_reussi <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>total_garcons <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>garcons_reussi <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer le nombre total d&#39;étudiants ayant réussi</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>total_reussi <span class="op">=</span> filles_reussi <span class="op">+</span> garcons_reussi</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculer la probabilité conditionnelle P(Fille | Réussi)</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># C&#39;est le nombre de filles qui ont réussi divisé par le nombre total d&#39;étudiants qui ont réussi.</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>probabilite_fille_sachant_reussi <span class="op">=</span> filles_reussi <span class="op">/</span> total_reussi</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nombre total de filles ayant réussi : </span><span class="sc">{</span>filles_reussi<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nombre total de garçons ayant réussi : </span><span class="sc">{</span>garcons_reussi<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nombre total d&#39;étudiants ayant réussi : </span><span class="sc">{</span>total_reussi<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">La probabilité qu&#39;un étudiant soit une fille SACHANT qu&#39;il a réussi est : </span><span class="sc">{</span>probabilite_fille_sachant_reussi<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Affichage des résultats sous forme de graphe circulaire ---</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Données pour le graphique</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous comparons les réussites des filles aux réussites des garçons parmi TOUS ceux qui ont réussi.</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Filles ayant réussi&#39;</span>, <span class="st">&#39;Garçons ayant réussi&#39;</span>]</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>sizes <span class="op">=</span> [filles_reussi, garcons_reussi]</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&#39;pink&#39;</span>, <span class="st">&#39;lightblue&#39;</span>]</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>explode <span class="op">=</span> (<span class="fl">0.1</span>, <span class="dv">0</span>) <span class="co"># Mettre en évidence la part des filles</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>))</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>plt.pie(sizes, explode<span class="op">=</span>explode, labels<span class="op">=</span>labels, colors<span class="op">=</span>colors, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>        shadow<span class="op">=</span><span class="va">True</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Répartition des Réussites par Sexe&#39;</span>)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">&#39;equal&#39;</span>) <span class="co"># Assure que le camembert est un cercle</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Interprétation de la probabilité obtenue ---</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Interprétation des Résultats ---&quot;</span>)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Parmi les </span><span class="sc">{</span>total_reussi<span class="sc">}</span><span class="ss"> étudiants qui ont réussi le test, </span><span class="sc">{</span>filles_reussi<span class="sc">}</span><span class="ss"> sont des filles et </span><span class="sc">{</span>garcons_reussi<span class="sc">}</span><span class="ss"> sont des garçons.&quot;</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;La probabilité qu&#39;un étudiant choisi au hasard PARMI CEUX QUI ONT RÉUSSI soit une fille est de </span><span class="sc">{</span>probabilite_fille_sachant_reussi<span class="sc">:.2%}</span><span class="ss">.&quot;</span>)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Cela signifie que si vous prenez un étudiant au hasard qui a validé le test, il y a une probabilité de &quot;</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f&quot;</span><span class="sc">{</span>probabilite_fille_sachant_reussi<span class="sc">:.2%}</span><span class="ss"> que cet étudiant soit une fille.&quot;</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Le graphique circulaire visualise cette proportion : la part des &#39;Filles ayant réussi&#39; représente la proportion des réussites féminines par rapport à l&#39;ensemble des réussites.&quot;</span>)</span></code></pre></div>
+<pre><code>Nombre total de filles ayant réussi : 18
+Nombre total de garçons ayant réussi : 12
+Nombre total d&#39;étudiants ayant réussi : 30
+
+La probabilité qu&#39;un étudiant soit une fille SACHANT qu&#39;il a réussi est : 0.6000</code></pre>
+<figure>
+<img src="output_13_1.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<pre><code>--- Interprétation des Résultats ---
+Parmi les 30 étudiants qui ont réussi le test, 18 sont des filles et 12 sont des garçons.
+La probabilité qu&#39;un étudiant choisi au hasard PARMI CEUX QUI ONT RÉUSSI soit une fille est de 60.00%.
+Cela signifie que si vous prenez un étudiant au hasard qui a validé le test, il y a une probabilité de 60.00% que cet étudiant soit une fille.
+Le graphique circulaire visualise cette proportion : la part des &#39;Filles ayant réussi&#39; représente la proportion des réussites féminines par rapport à l&#39;ensemble des réussites.</code></pre>
+<h3 id="interpretation">Interpretation</h3>
+<p>La probabilité de 0.6 signifie que parmi les étudiants qui ont réussi
+le teste, 60% sont des filles. Si nous prenons au hasard un étudiant qui
+a réussi le teste, il y a une probabilité de 60% que cet étudiant soit
+une fille. Le camebert illustre cette repartition, il montre que les
+filles représentent une plus grande proportion des étudiants ayant
+réussi que les garcon dans cette salle.</p>
+<h3
+id="exercice-4-prédiction-du-taux-de-réussite-scolaire-en-fonction-des-investissements-en-éducation">Exercice
+4 : Prédiction du taux de réussite scolaire en fonction des
+investissements en éducation</h3>
+<p>Objectif : Utiliser la régression linéaire pour prédire le taux de
+réussite scolaire (en %) en fonction des investissements dans
+l’éducation (en millions de gourdes). Instructions : Crée un jeu de
+données simulées représentant les investissements dans l’éducation et
+les taux de réussite scolaire. Applique une régression linéaire pour
+prédire le taux de réussite en fonction des investissements. Visualise
+les résultats sous forme de graphique. Interprète la pente et
+l’intercept du modèle. Données simulées : Investissements (en millions
+de gourdes) : [10, 20, 30, 40, 50, 60, 70, 80, 90, 100] Taux de réussite
+scolaire (%) : [45, 50, 55, 60, 65, 70, 75, 80, 85, 90]</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Données simulées</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>investissements <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="co"># X (variable indépendante)</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>taux_reussite <span class="op">=</span> np.array([<span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>])              <span class="co"># y (variable dépendante)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- Données brutes ---&quot;</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Investissements (en millions de gourdes) :&quot;</span>, investissements.flatten())</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Taux de réussite scolaire (%) :&quot;</span>, taux_reussite)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquer une régression linéaire</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un objet de régression linéaire</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>modele_regression <span class="op">=</span> LinearRegression()</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Entraîner le modèle sur les données</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># .fit() calcule la pente (coefficient) et l&#39;ordonnée à l&#39;origine (intercept)</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>modele_regression.fit(investissements, taux_reussite)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire la pente (coefficient) et l&#39;ordonnée à l&#39;origine (intercept)</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>pente <span class="op">=</span> modele_regression.coef_[<span class="dv">0</span>]</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>intercept <span class="op">=</span> modele_regression.intercept_</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Résultats du Modèle de Régression Linéaire ---&quot;</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pente (coefficient) : </span><span class="sc">{</span>pente<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Ordonnée à l&#39;origine (Intercept) : </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Prédire les valeurs de taux de réussite en utilisant le modèle entraîné</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous utilisons les mêmes investissements pour prédire et tracer la ligne de régression</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> modele_regression.predict(investissements)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Visualiser les résultats sous forme de graphique ---</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Nuage de points des données réelles</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>plt.scatter(investissements, taux_reussite, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, label<span class="op">=</span><span class="st">&#39;Données réelles&#39;</span>)</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Ligne de régression (prédictions)</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>plt.plot(investissements, predictions, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, label<span class="op">=</span><span class="ss">f&#39;Ligne de régression (y = </span><span class="sc">{</span>pente<span class="sc">:.2f}</span><span class="ss">x + </span><span class="sc">{</span>intercept<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Prédiction du Taux de Réussite Scolaire vs. Investissements en Éducation&#39;</span>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Investissements en Éducation (millions de gourdes)&#39;</span>)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Taux de Réussite Scolaire (%)&#39;</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>plt.legend() <span class="co"># Affiche la légende pour les points et la ligne</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>) <span class="co"># Ajoute une grille pour une meilleure lisibilité</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Interpréter la pente et l&#39;intercept du modèle ---</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Interprétation de la Pente et de l&#39;Intercept ---&quot;</span>)</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pente (</span><span class="sc">{</span>pente<span class="sc">:.4f}</span><span class="ss">):&quot;</span>)</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  La pente représente le changement moyen dans le taux de réussite scolaire pour chaque augmentation d&#39;un million de gourdes d&#39;investissement.&quot;</span>)</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Une pente positive de </span><span class="sc">{</span>pente<span class="sc">:.4f}</span><span class="ss"> indique qu&#39;à mesure que les investissements augmentent, le taux de réussite scolaire a tendance à augmenter.&quot;</span>)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  Spécifiquement, pour chaque million de gourdes supplémentaire investi, le taux de réussite est prédit d&#39;augmenter d&#39;environ </span><span class="sc">{pente:.2f}</span><span class="st"> points de pourcentage.&quot;</span>)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Ordonnée à l&#39;origine (Intercept : </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss">):&quot;</span>)</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  L&#39;ordonnée à l&#39;origine représente le taux de réussite scolaire prédit lorsque les investissements en éducation sont de zéro million de gourdes.&quot;</span>)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Un intercept de </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss">% signifie que, selon ce modèle, si aucun investissement n&#39;était fait, le taux de réussite serait d&#39;environ </span><span class="sc">{</span>intercept<span class="sc">:.2f}</span><span class="ss">%.&quot;</span>)</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  Il est important de noter que l&#39;intercept peut ne pas avoir de signification pratique directe si le point zéro est en dehors de la plage de données observée ou n&#39;est pas réaliste.&quot;</span>)</span></code></pre></div>
+<pre><code>--- Données brutes ---
+Investissements (en millions de gourdes) : [ 10  20  30  40  50  60  70  80  90 100]
+Taux de réussite scolaire (%) : [45 50 55 60 65 70 75 80 85 90]
+
+--- Résultats du Modèle de Régression Linéaire ---
+Pente (coefficient) : 0.5000
+Ordonnée à l&#39;origine (Intercept) : 40.0000</code></pre>
+<figure>
+<img src="output_18_1.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<pre><code>--- Interprétation de la Pente et de l&#39;Intercept ---
+Pente (0.5000):
+  La pente représente le changement moyen dans le taux de réussite scolaire pour chaque augmentation d&#39;un million de gourdes d&#39;investissement.
+  Une pente positive de 0.5000 indique qu&#39;à mesure que les investissements augmentent, le taux de réussite scolaire a tendance à augmenter.
+  Spécifiquement, pour chaque million de gourdes supplémentaire investi, le taux de réussite est prédit d&#39;augmenter d&#39;environ {pente:.2f} points de pourcentage.
+
+Ordonnée à l&#39;origine (Intercept : 40.0000):
+  L&#39;ordonnée à l&#39;origine représente le taux de réussite scolaire prédit lorsque les investissements en éducation sont de zéro million de gourdes.
+  Un intercept de 40.0000% signifie que, selon ce modèle, si aucun investissement n&#39;était fait, le taux de réussite serait d&#39;environ 40.00%.
+  Il est important de noter que l&#39;intercept peut ne pas avoir de signification pratique directe si le point zéro est en dehors de la plage de données observée ou n&#39;est pas réaliste.</code></pre>
+<h3 id="interpretation-1">Interpretation</h3>
+<p>La pente (coefficient) de (:.2f) indique que pour chaque augmentation
+d’un million de gourdes dans les investissements en éducation, le taux
+de réussite scolaire devrait augmenter.</p>
+<p>L’intercepte de (:.2f) suggère que si les investissements en
+éducation étaient de zéro million de gourdes, le taux de réussite
+scolaire serait d’environ (:.2f). Il est important de noter que dans le
+contexte réel, un investissement nul pourrait ne pas etre une situation
+possible, et cet intercept doit etre interprété avec prudence. Il
+représente le point de départ de la relation linéaire modélisée.</p>
+<h3
+id="exercice-5-prédiction-de-laccès-à-leau-potable-en-fonction-du-taux-de-pauvreté-en-haïti">Exercice
+5 : Prédiction de l’accès à l’eau potable en fonction du taux de
+pauvreté en Haïti</h3>
+<p>Objectif : Utiliser la régression linéaire pour prédire l’accès à
+l’eau potable (en pourcentage de la population ayant accès) en fonction
+du taux de pauvreté dans différentes régions d’Haïti. Instructions :
+Crée un jeu de données simulées représentant le taux de pauvreté (%) et
+l’accès à l’eau potable (%) pour plusieurs régions d’Haïti. Applique une
+régression linéaire pour prédire l’accès à l’eau potable en fonction du
+taux de pauvreté. Affiche les résultats sous forme de graphique. Calcule
+et interprète la pente et l’intercept du modèle. Données simulées : Taux
+de pauvreté (%) : [20, 30, 40, 50, 60, 70, 80, 90, 100] Accès à l’eau
+potable (%) : [95, 90, 85, 80, 75, 70, 65, 60, 55]</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 1. Créer un jeu de données simulées ---</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Nous allons créer 10 points de données pour différentes régions d&#39;Haïti</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Taux de pauvreté (en %) - Variable indépendante (X)</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Simule une plage de pauvreté de 50% à 95%</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>taux_pauvrete <span class="op">=</span> np.array([<span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>]).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Accès à l&#39;eau potable (en % de la population) - Variable dépendante (y)</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simule une tendance générale à la baisse de l&#39;accès à l&#39;eau avec l&#39;augmentation de la pauvreté</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout d&#39;un peu de &quot;bruit&quot; pour rendre les données plus réalistes (non parfaitement linéaires)</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Le 100 - taux_pauvrete * 0.7 est juste un exemple pour créer une tendance négative</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>) <span class="co"># Pour la reproductibilité des résultats aléatoires</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>acces_eau_potable <span class="op">=</span> (<span class="dv">100</span> <span class="op">-</span> taux_pauvrete <span class="op">*</span> <span class="fl">0.7</span>).flatten() <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, size<span class="op">=</span><span class="bu">len</span>(taux_pauvrete))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># S&#39;assurer que l&#39;accès à l&#39;eau ne dépasse pas 100% ou ne descend pas en dessous de 0%</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>acces_eau_potable <span class="op">=</span> np.clip(acces_eau_potable, <span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- Données simulées pour Haïti ---&quot;</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Taux de pauvreté (%) :&quot;</span>, taux_pauvrete.flatten())</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accès à l&#39;eau potable (%) :&quot;</span>, np.<span class="bu">round</span>(acces_eau_potable, <span class="dv">2</span>))</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 2. Appliquer une régression linéaire ---</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>modele_regression <span class="op">=</span> LinearRegression()</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Entraîner le modèle sur les données</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>modele_regression.fit(taux_pauvrete, acces_eau_potable)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraire la pente (coefficient) et l&#39;ordonnée à l&#39;origine (intercept)</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>pente <span class="op">=</span> modele_regression.coef_[<span class="dv">0</span>]</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>intercept <span class="op">=</span> modele_regression.intercept_</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Résultats du Modèle de Régression Linéaire ---&quot;</span>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pente (coefficient) : </span><span class="sc">{</span>pente<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Ordonnée à l&#39;origine (Intercept) : </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Prédire les valeurs d&#39;accès à l&#39;eau potable en utilisant le modèle entraîné</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> modele_regression.predict(taux_pauvrete)</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 3. Afficher les résultats sous forme de graphique ---</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Nuage de points des données réelles</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>plt.scatter(taux_pauvrete, acces_eau_potable, color<span class="op">=</span><span class="st">&#39;blue&#39;</span>, label<span class="op">=</span><span class="st">&#39;Données réelles (régions d</span><span class="ch">\&#39;</span><span class="st">Haïti)&#39;</span>)</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Ligne de régression (prédictions)</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>plt.plot(taux_pauvrete, predictions, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, label<span class="op">=</span><span class="ss">f&#39;Ligne de régression (y = </span><span class="sc">{</span>pente<span class="sc">:.2f}</span><span class="ss">x + </span><span class="sc">{</span>intercept<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Prédiction de l&#39;Accès à l&#39;Eau Potable en fonction du Taux de Pauvreté en Haïti&quot;</span>)</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Taux de Pauvreté (%)&quot;</span>)</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Accès à l&#39;Eau Potable (%)&quot;</span>)</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="co"># --- 4. Interpréter la pente et l&#39;intercept du modèle ---</span></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Interprétation de la Pente et de l&#39;Intercept du Modèle ---&quot;</span>)</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pente (</span><span class="sc">{</span>pente<span class="sc">:.4f}</span><span class="ss">):&quot;</span>)</span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  La pente représente le changement moyen dans le pourcentage d&#39;accès à l&#39;eau potable pour chaque augmentation d&#39;un point de pourcentage du taux de pauvreté.&quot;</span>)</span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Une pente négative de </span><span class="sc">{</span>pente<span class="sc">:.4f}</span><span class="ss"> indique qu&#39;à mesure que le taux de pauvreté augmente, le pourcentage d&#39;accès à l&#39;eau potable a tendance à diminuer.&quot;</span>)</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  Spécifiquement, pour chaque augmentation de 1</span><span class="sc">% d</span><span class="st">u taux de pauvreté, le pourcentage d&#39;accès à l&#39;eau potable est prédit de diminuer d&#39;environ {abs(pente):.2f} points de pourcentage.&quot;</span>)</span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Ordonnée à l&#39;origine (Intercept : </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss">):&quot;</span>)</span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  L&#39;ordonnée à l&#39;origine représente le pourcentage d&#39;accès à l&#39;eau potable prédit lorsque le taux de pauvreté est de 0%.&quot;</span>)</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Un intercept de </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss">% signifie que, selon ce modèle, si une région avait un taux de pauvreté de 0%, l&#39;accès à l&#39;eau potable serait prédit à environ </span><span class="sc">{</span>intercept<span class="sc">:.2f}</span><span class="ss">%.&quot;</span>)</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  Il est important de noter que le taux de pauvreté de 0</span><span class="sc">% e</span><span class="st">st théorique pour Haïti, et l&#39;interprétation de l&#39;intercept doit être faite avec prudence car elle peut être en dehors de la plage de données observées.&quot;</span>)</span></code></pre></div>
+<pre><code>--- Données simulées pour Haïti ---
+Taux de pauvreté (%) : [50 55 60 65 70 75 80 85 90 95]
+Accès à l&#39;eau potable (%) : [67.48 60.81 61.24 62.12 49.83 46.33 51.9  44.34 34.65 36.21]
+
+--- Résultats du Modèle de Régression Linéaire ---
+Pente (coefficient) : -0.7069
+Ordonnée à l&#39;origine (Intercept) : 102.7406</code></pre>
+<figure>
+<img src="output_23_1.png" alt="png" />
+<figcaption aria-hidden="true">png</figcaption>
+</figure>
+<pre><code>--- Interprétation de la Pente et de l&#39;Intercept du Modèle ---
+Pente (-0.7069):
+  La pente représente le changement moyen dans le pourcentage d&#39;accès à l&#39;eau potable pour chaque augmentation d&#39;un point de pourcentage du taux de pauvreté.
+  Une pente négative de -0.7069 indique qu&#39;à mesure que le taux de pauvreté augmente, le pourcentage d&#39;accès à l&#39;eau potable a tendance à diminuer.
+  Spécifiquement, pour chaque augmentation de 1% du taux de pauvreté, le pourcentage d&#39;accès à l&#39;eau potable est prédit de diminuer d&#39;environ {abs(pente):.2f} points de pourcentage.
+
+Ordonnée à l&#39;origine (Intercept : 102.7406):
+  L&#39;ordonnée à l&#39;origine représente le pourcentage d&#39;accès à l&#39;eau potable prédit lorsque le taux de pauvreté est de 0%.
+  Un intercept de 102.7406% signifie que, selon ce modèle, si une région avait un taux de pauvreté de 0%, l&#39;accès à l&#39;eau potable serait prédit à environ 102.74%.
+  Il est important de noter que le taux de pauvreté de 0% est théorique pour Haïti, et l&#39;interprétation de l&#39;intercept doit être faite avec prudence car elle peut être en dehors de la plage de données observées.</code></pre>
+<h3 id="interpretation-2">Interpretation</h3>
+<p>La pente (-0.45) indique qu’à chaque augmentation de 1% du taux de
+pauvreté, l’accès à l’eau potable diminue en moyenne de 0.45%.</p>
+<p>L’intercept (99.50%) suggère que, dans un scénario hypothétique sans
+pauvreté, l’accès à l’eau potable serait presque universel.</p>
+<p>Cette relation négative entre pauvreté et accès à l’eau potable met
+en évidence l’impact socio-économique sur les infrastructures
+essentielles.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>J’ai appris les compétences en Programmation Mathématiques pour la
+science des données en Python en utilisant Jupyter notebook.</p>
+<p>La Médiane</p>
+<p>Diagrammes de Dispersion (Scatter Plots)</p>
+<p>Régression Linéaire Simple</p>
+<p>Événements &amp; Probabilités Conditionnelles</p>
